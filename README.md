@@ -21,9 +21,8 @@ A premium car rental management system built with PHP, MySQL, Js and Bootstrap. 
 
 - **Backend**: PHP 7.4+, MySQL 5.7+
 - **Frontend**: HTML5, CSS3, JavaScript (ES6+), Bootstrap 4.5.2
-- **Libraries**: jQuery 3.6.0
-- **Server**: Apache/Nginx compatible
-- **Database**: MySQL with InnoDB engine
+- **Server**: Apache compatible
+- **Database**: MySQL
 
 ## 🚀 Quick Start
 
