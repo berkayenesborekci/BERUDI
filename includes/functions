@@ -1,0 +1,67 @@
+<?php
+function checkAdminAuth() {
+    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_SESSION["is_admin"]) || $_SESSION["is_admin"] !== true){
+        header("location: ../login.php");
+        exit;
+    }
+}
+
+function checkUserAuth() {
+    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+        header("location: login.php");
+        exit;
+    }
+}
+
+function formatDate($date) {
+    return date('m/d/Y', strtotime($date));
+}
+
+function formatDateTime($datetime) {
+    return date('m/d/Y H:i', strtotime($datetime));
+}
+
+function formatPrice($price) {
+    return '$' . number_format($price, 2);
+}
+
+function getStatusBadge($status) {
+    switch($status) {
+        case 'pending':
+            return '<span class="badge badge-warning">Pending</span>';
+        case 'confirmed':
+            return '<span class="badge badge-success">Confirmed</span>';
+        case 'cancelled':
+            return '<span class="badge badge-danger">Cancelled</span>';
+        default:
+            return '<span class="badge badge-secondary">Unknown</span>';
+    }
+}
+
+function sanitizeInput($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+function redirectWithMessage($location, $message, $type = 'success') {
+    $_SESSION['message'] = $message;
+    $_SESSION['message_type'] = $type;
+    header("location: $location");
+    exit;
+}
+
+function displayMessage() {
+    if(isset($_SESSION['message'])) {
+        $type = $_SESSION['message_type'] ?? 'success';
+        $message = $_SESSION['message'];
+        echo "<div class='alert alert-$type alert-dismissible fade show' role='alert'>";
+        echo $message;
+        echo "<button type='button' class='btn-close' data-bs-dismiss='alert'></button>";
+        echo "</div>";
+        unset($_SESSION['message']);
+        unset($_SESSION['message_type']);
+    }
+}
+?> 
