@@ -1,146 +1,176 @@
 # 🚗 BERUDI - Premium Audi Sport Car Rental
-   ## ✨ Features
+A premium car rental management system built with PHP, MySQL, Js and Bootstrap. Designed for renting luxury Audi sports cars with a modern, responsive interface.
 
-   ### 👤 For Customers
-   - **🔍 Browse Premium Vehicles**: View collection of high-end Audi sports cars
-   - **🎯 Advanced Search**: Find cars by model, price, and specifications  
-   - **📅 Easy Reservations**: Book vehicles with simple date selection
-   - **📱 Responsive Design**: Optimized for all devices
+## ✨ Features
 
-   ### 👨‍💼 For Administrators  
-   - **📊 Dashboard**: Monitor users, vehicles, and reservations
-   - **👥 User Management**: Manage registered customers
-   - **🚗 Vehicle Management**: Add, edit, and manage car inventory
-   - **✅ Reservation Control**: Approve, confirm, or cancel bookings
+### 👤 For Customers
+- **🔍 Browse Premium Vehicles**: View collection of high-end Audi sports cars
+- **🎯 Advanced Search**: Find cars by model, price, and specifications  
+- **📅 Easy Reservations**: Book vehicles with simple date selection
+- **📱 Responsive Design**: Optimized for all devices
+- **👤 User Dashboard**: Manage personal reservations and profile
 
-   ## 🛠️ Tech Stack
+### 👨‍💼 For Administrators  
+- **📊 Dashboard**: Monitor users, vehicles, and reservations
+- **👥 User Management**: View and manage registered customers
+- **🚗 Vehicle Management**: Add, edit, and manage car inventory
+- **✅ Reservation Control**: Approve, confirm, or cancel bookings
+- **📈 Analytics**: Track system usage and performance
 
-   - **Backend**: PHP 7.4+, MySQL 5.7+
-   - **Frontend**: HTML5, CSS3, JavaScript, Bootstrap 4.5.2
-   - **Libraries**: jQuery 3.6.0
+## 🛠️ Tech Stack
 
-   ## 🚀 Quick Start
+- **Backend**: PHP 7.4+, MySQL 5.7+
+- **Frontend**: HTML5, CSS3, JavaScript (ES6+), Bootstrap 4.5.2
+- **Libraries**: jQuery 3.6.0
+- **Server**: Apache/Nginx compatible
+- **Database**: MySQL with InnoDB engine
 
-   ### Prerequisites
-   - PHP 7.4+
-   - MySQL 5.7+
-   - Web server (Apache/Nginx)
+## 🚀 Quick Start
 
-   ### Installation
+### Prerequisites
+- PHP 7.4 or higher
+- MySQL 5.7 or higher
+- Web server (Apache/Nginx)
+- XAMPP/WAMP (for local development)
 
-   1. **Download & Setup**
-      ```bash
-      # Download from GitHub or clone
-      git clone https://github.com/berkayenesborekci/BERUDI.git
-      cd BERUDI
-      ```
+### Installation
 
-   2. **Database Setup**
-      ```sql
-      mysql -u root -p
-      CREATE DATABASE berudi_db;
-      USE berudi_db;
-      source database.sql;
-      ```
-
-   3. **Configure Database**
-      ```php
-      $servername = "localhost";
-      $username = "root";           
-      $password = "";               
-      $dbname = "berudi_db";
-      ```
-
-   4. **Create Admin User**
-      ```bash
-      # Visit: http://localhost/BERUDI/create_admin.php
-      # This will create admin account: admin / admin123
-      ```
-
-   5. **Access Application**
-      - **Website**: `http://localhost/BERUDI`
-      - **Admin Panel**: `http://localhost/BERUDI/admin`
-
-   ## 📁 Project Structure
-
-   ```
-   BERUDI/
-   ├── 📁 admin/              # Admin panel
-   │   ├── index.php         # Dashboard
-   │   ├── vehicles.php      # Vehicle management
-   │   └── users.php         # User management
-   ├── 📁 assets/            # Static assets
-   │   ├── css/style.css     # Custom styles
-   │   └── images/           # Vehicle images
-   ├── 📄 index.php          # Homepage
-   ├── 📄 login.php          # Authentication
-   ├── 📄 register.php       # User registration
-   ├── 📄 vehicles.php       # Vehicle catalog
-   ├── 📄 reserve.php        # Reservation system
-   ├── 📄 database.sql       # Database schema
-   └── 📄 config.php         # Configuration
+1. **Download & Setup**
+   ```bash
+   # Download from GitHub or clone repository
+   git clone https://github.com/berkayenesborekci/BERUDI.git
+   cd BERUDI
    ```
 
-   ## 🔐 Security Features
+2. **Database Setup**
+   ```sql
+   # Create database
+   mysql -u root -p
+   CREATE DATABASE berudi_db;
+   USE berudi_db;
+   source database.sql;
+   ```
 
-   - ✅ Password hashing with PHP's `password_hash()`
-   - ✅ SQL injection prevention via prepared statements
-   - ✅ Session-based authentication
-   - ✅ Input validation and sanitization
-   - ✅ Role-based access control
-
-   ## 📱 Responsive Design
-
-   Fully responsive design tested on:
-   - 🖥️ **Desktop** (1200px+)
-   - 📱 **Tablet** (768px - 1199px)  
-   - 📱 **Mobile** (< 768px)
-
-   ## 🗄️ Database Schema
-
-   ### Tables
-   - **users**: Customer and admin accounts
-   - **vehicles**: Car inventory with specifications
-   - **reservations**: Booking management system
-
-   ## ⚙️ Configuration
-
-   ### Environment Setup
+3. **Configure Database Connection**
    ```php
    // config.php
    $servername = "localhost";
-   $username = "root";
-   $password = "";
+   $username = "root";           
+   $password = "";               
    $dbname = "berudi_db";
    ```
 
-   ### Admin Access
-   1. Run `create_admin.php` to create admin user
-   2. Login with: `admin` / `admin123`
-   3. Access admin panel at `/admin/`
+4. **Create Admin User**
+   ```bash
+   # Visit: http://localhost/BERUDI/create_admin.php
+   # This creates admin account: admin / admin123
+   ```
 
-   ## 🤝 Contributing
+5. **Access Application**
+   - **Main Website**: `http://localhost/BERUDI`
+   - **Admin Panel**: `http://localhost/BERUDI/admin`
 
-   1. Fork the project
-   2. Create feature branch (`git checkout -b feature/AmazingFeature`)
-   3. Commit changes (`git commit -m 'Add AmazingFeature'`)
-   4. Push to branch (`git push origin feature/AmazingFeature`)
-   5. Open Pull Request
+## 📁 Project Structure
 
-   ## 📄 License
+```
+BERUDI/
+├── 📁 admin/                  # Admin panel files
+│   ├── index.php             # Admin dashboard
+│   ├── vehicles.php          # Vehicle management
+│   ├── users.php             # User management
+│   ├── reservations.php      # Reservation management
+│   └── manage_reservation.php # Reservation actions
+├── 📁 assets/                # Static assets
+│   ├── 📁 css/
+│   │   └── style.css         # Custom styles
+│   ├── 📁 js/
+│   │   ├── main.js           # Main functionality
+│   │   ├── admin.js          # Admin panel scripts
+│   │   └── validation.js     # Form validation
+│   └── 📁 images/            # Vehicle images
+├── 📁 includes/              # Shared components
+│   └── functions.php         # Common functions
+├── 📄 index.php              # Homepage
+├── 📄 login.php              # User authentication
+├── 📄 register.php           # User registration
+├── 📄 vehicles.php           # Vehicle catalog
+├── 📄 reserve.php            # Reservation system
+├── 📄 reservations.php       # User reservations
+├── 📄 database.sql           # Database schema
+├── 📄 config.php             # Database configuration
+└── 📄 create_admin.php       # Admin user creator
+```
 
-   This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## 🔐 Security Features
 
-   ## 🙏 Acknowledgments
+- ✅ **Password Security**: Secure hashing with PHP's `password_hash()`
+- ✅ **SQL Injection Prevention**: Prepared statements for all queries
+- ✅ **Session Management**: Secure session-based authentication
+- ✅ **Input Validation**: Server-side and client-side validation
+- ✅ **Access Control**: Role-based permissions (Admin/User)
+- ✅ **XSS Protection**: Output escaping with `htmlspecialchars()`
 
-   - Bootstrap team for the amazing CSS framework
-   - jQuery community for the JavaScript library
-   - Audi for inspiring the premium car rental concept
+## 📱 Responsive Design
 
-   ## 📞 Support
+Fully responsive design tested and optimized for:
+- 🖥️ **Desktop** (1200px and above)
+- 📱 **Tablet** (768px - 1199px)  
+- 📱 **Mobile** (Below 768px)
 
-   If you have any questions or need help, please:
-   - 🐛 [Open an issue](https://github.com/berkayenesborekci/BERUDI/issues)
-   - 💬 [Start a discussion](https://github.com/berkayenesborekci/BERUDI/discussions)
+## 🗄️ Database Schema
 
-   ---
+### Core Tables
+- **`users`**: Customer and administrator accounts
+- **`vehicles`**: Car inventory with detailed specifications
+- **`reservations`**: Booking management with status tracking
+
+### Key Features
+- **Foreign Key Constraints**: Data integrity maintenance
+- **Auto Timestamps**: Created/updated tracking
+- **Optimized Indexes**: Fast query performance
+
+## ⚙️ Configuration
+
+### Environment Setup
+```php
+// config.php - Database Configuration
+$servername = "localhost";    // Database host
+$username = "root";           // Database username
+$password = "";               // Database password (empty for XAMPP)
+$dbname = "berudi_db";        // Database name
+```
+
+### Admin Panel Access
+1. Run `create_admin.php` to create admin user
+2. Login credentials: `admin` / `admin123`
+3. Access admin panel at `/admin/` directory
+
+### Vehicle Image Configuration
+- Place images in `assets/images/` directory
+- Supported formats: JPG, PNG, WebP
+- Recommended size: 800x600px
+- Path format: `assets/images/vehicle-name.jpg`
+
+## 🤝 Contributing
+
+We welcome contributions! Please follow these steps:
+
+1. **Fork** the project
+2. **Create** feature branch (`git checkout -b feature/AmazingFeature`)
+3. **Commit** your changes (`git commit -m 'Add AmazingFeature'`)
+4. **Push** to branch (`git push origin feature/AmazingFeature`)
+5. **Open** a Pull Request
+
+### Development Guidelines
+- Follow PSR-12 coding standards for PHP
+- Use meaningful variable and function names
+- Add comments for complex logic
+- Test all features before submitting
+
+## 🙏 Acknowledgments
+
+- **Bootstrap Team** - For the responsive CSS framework
+- **jQuery Community** - For the powerful JavaScript library
+- **Audi** - For inspiring the premium automotive experience
+- **PHP Community** - For the robust backend language
+---
